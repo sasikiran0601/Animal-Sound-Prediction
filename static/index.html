@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Voice Detection - AI Powered</title>
+    <meta name="description" content="Upload audio files and detect animal sounds using advanced AI">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🐾</span>
+                <h1>Animal Voice Detection</h1>
+            </div>
+            <p class="subtitle">AI-Powered Animal Sound Classification</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-card">
+                    <h2>Upload Audio File</h2>
+                    <p class="upload-description">Drop your audio file here or click to browse</p>
+
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="audioFile" accept=".mp3,.wav,.flac,.ogg,.m4a" hidden>
+                        <div class="upload-icon">🎵</div>
+                        <p class="upload-text">Drag & drop audio file</p>
+                        <p class="upload-subtext">or click to browse</p>
+                        <p class="upload-formats">Supported: MP3, WAV, FLAC, OGG, M4A</p>
+                    </div>
+
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <div class="file-details">
+                            <span class="file-icon">📁</span>
+                            <div class="file-text">
+                                <p class="file-name" id="fileName"></p>
+                                <p class="file-size" id="fileSize"></p>
+                            </div>
+                            <button class="remove-btn" id="removeFile">✕</button>
+                        </div>
+                    </div>
+
+                    <button class="predict-btn" id="predictBtn" disabled>
+                        <span class="btn-text">Predict Animal</span>
+                        <span class="btn-icon">🔮</span>
+                    </button>
+
+                    <div class="loading" id="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Analyzing audio...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-card">
+                    <h2>Prediction Results</h2>
+
+                    <div class="main-result">
+                        <div class="result-animal">
+                            <span class="result-icon">🎯</span>
+                            <div class="result-text">
+                                <p class="result-label">Detected Animal</p>
+                                <h3 class="result-value" id="predictedAnimal"></h3>
+                            </div>
+                        </div>
+                        <div class="confidence-container">
+                            <div class="confidence-label">
+                                <span>Confidence</span>
+                                <span class="confidence-value" id="confidenceValue"></span>
+                            </div>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="confidenceFill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="all-probabilities">
+                        <h3>All Class Probabilities</h3>
+                        <div class="probabilities-list" id="probabilitiesList"></div>
+                    </div>
+
+                    <button class="new-prediction-btn" id="newPredictionBtn">
+                        <span>Analyze Another File</span>
+                        <span>🔄</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section class="error-section" id="errorSection" style="display: none;">
+                <div class="error-card">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Oops! Something went wrong</h3>
+                    <p class="error-message" id="errorMessage"></p>
+                    <button class="retry-btn" id="retryBtn">Try Again</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by TensorFlow & Deep Learning</p>
+            <p class="footer-subtext">15 Animal Classes Supported</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
