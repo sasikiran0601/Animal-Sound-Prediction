@@ -1,5 +1,0 @@
-requests
-tqdm
-librosa
-soundfile
-numpy
