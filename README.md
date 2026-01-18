@@ -52,7 +52,44 @@ The model can detect **15 different animal sounds**:
 14. 🐦 Humming-bird
 15. 📊 Sample
 
-## �📦 Installation
+## 📦 Dataset
+
+### Download from Kaggle
+
+The complete dataset is hosted on Kaggle for easy access:
+
+**🎵 [Animal Sound Dataset on Kaggle](https://www.kaggle.com/datasets/sasikiran0601/animaldataset)**
+
+This includes:
+- 46,162+ audio files (.wav format)
+- 15 animal classes
+- Pre-processed spectrograms
+- Trained CNN model (best_model.h5)
+
+### Quick Download
+
+**Option 1: Download via Kaggle Website**
+1. Visit: https://www.kaggle.com/datasets/sasikiran0601/animaldataset
+2. Click "Download" button
+3. Extract to your project folder
+
+**Option 2: Download via Kaggle CLI**
+```bash
+# Install Kaggle CLI
+pip install kaggle
+
+# Download dataset
+kaggle datasets download -d sasikiran0601/animaldataset
+
+# Extract
+unzip animaldataset.zip
+```
+
+> **Note**: The trained model is included in this repository, so you can start using the web app immediately without downloading the full dataset!
+
+---
+
+## 📦 Installation
 
 1. **Install Python 3.8+**
 
